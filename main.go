@@ -1,12 +1,16 @@
 package main
 
 import (
-	"finally/features"
-	"fmt"
+	"context"
+	"finally/features/postgres"
 )
 
 func main() {
-	fmt.Println("1")
+	ctx := context.Background()
 
-	features.PrintAny()
+	_, err := postgres.Connecting(ctx)
+	if err != nil {
+		panic(err)
+	}
+
 }
