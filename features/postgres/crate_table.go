@@ -13,10 +13,10 @@ func CreateTable(ctx context.Context, conn *pgx.Conn) error {
 	title VARCHAR(100) NOT NULL,
 	author VARCHAR(50) NOT NULL,
 	review VARCHAR(500),
-	date TIMESTAMP,
-	date_read TIMESTAMP NOT NULL,
-	is_read BOOLEAN,
-	is_add TIMESTAMP NOT NULL);
+	date INT NOT NULL,
+	date_read TIMESTAMP ,
+	date_add TIMESTAMP NOT NULL,
+	is_read BOOLEAN);
 	`
 
 	_, err := conn.Exec(ctx, sqlQuery)
