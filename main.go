@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"finally/features"
+	"fmt"
+)
 
 func main() {
 	fmt.Println("1")
+
+	features.PrintAny()
 }
